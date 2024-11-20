@@ -19,7 +19,7 @@ plink --version
 
 ## Run the preprocessing Script
 
-This script processes multiple `.vcf.gz` files in a directory, applies quality control filters using PLINK, and merges the filtered data into a single dataset.
+This [preprocess_vcf.sh](https://github.com/isen-zhang/modelling_hpp/blob/main/preprocess_vcf.sh) processes multiple `.vcf.gz` files in a directory, applies quality control filters using PLINK, and merges the filtered data into a single dataset.
 
 ### Quality Control Thresholds:
 
@@ -30,8 +30,9 @@ MAF: Minor allele frequency threshold (default: 0.05).
 HWE: Hardy-Weinberg equilibrium threshold (default: 1e-6).
 
 ### **Running the Script**
+Change the input_dir varible with the actual directory.
 ```bash
-   bash preprocessing_vcf.sh
+   bash preprocess_vcf.sh
 ```
 
 Temporary files are stored in the ../results/temp_file directory.
