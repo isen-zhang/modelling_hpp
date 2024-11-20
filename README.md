@@ -20,10 +20,13 @@ plink --version
 ## Run the preprocessing Script
 
 This script processes multiple `.vcf.gz` files in a directory, applies quality control filters using PLINK, and merges the filtered data into a single dataset.
+
 ### Quality Control Thresholds:
 
 GENO: Missingness rate (default: 0.05).
+
 MAF: Minor allele frequency threshold (default: 0.05).
+
 HWE: Hardy-Weinberg equilibrium threshold (default: 1e-6).
 
 ### **Running the Script**
@@ -40,3 +43,29 @@ The final merged dataset is saved as:
 ## GWAS Pipeline Script (TODO)
 
 This script automates the key steps of a Genome-Wide Association Study (GWAS) pipeline, from genotype data quality control to GWAS analysis and visualization. It leverages PLINK for data processing and R for generating plots.
+### Key Features
+1. **Quality Control**:
+   - Filters genotype data based on missingness (`GENO`), minor allele frequency (`MAF`), and Hardy-Weinberg equilibrium (`HWE`).
+   - Removes samples with high missing data (`MIND`).
+
+2. **Population Stratification Correction**:
+   - Performs PCA to account for population stratification, saving results for downstream analysis.
+
+3. **GWAS Analysis**:
+   - Conducts association testing using logistic regression (with covariates) or basic association testing (without covariates).
+   - Requires `phenotype.txt` and optionally `covariates.txt`.
+
+4. **Post-GWAS Visualization**:
+   - Generates Manhattan and QQ plots of GWAS results using R.
+
+5. **Significant SNP Filtering**:
+   - Extracts SNPs with a p-value < 5e-8 and saves them to a file.
+
+### Output Files
+- **Quality-Controlled Genotype Data**: `gwas_results/merged_data_qc_filtered.*`
+- **PCA Results**: `gwas_results/pca_results.eigenvec`
+- **GWAS Results**: `gwas_results/gwas_results.*`
+- **Plots**:
+  - Manhattan Plot: `gwas_results/manhattan_plot.png`
+  - QQ Plot: `gwas_results/qq_plot.png`
+- **Significant SNPs**: `gwas_results/significant_snps.txt`
