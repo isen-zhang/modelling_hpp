@@ -37,9 +37,12 @@ Change the input_dir varible with the actual directory.
 
 Temporary files are stored in the ../results/temp_file directory.
 The final merged dataset is saved as:
-../results/temp_file/merged_data.bed
-../results/temp_file/merged_data.bim
-../results/temp_file/merged_data.fam
+
+results/temp_file/merged_data.bed
+
+results/temp_file/merged_data.bim
+
+results/temp_file/merged_data.fam
 
 ## GWAS Pipeline Script (TODO)
 
