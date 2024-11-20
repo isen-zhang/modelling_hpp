@@ -1,6 +1,6 @@
 # modelling_hpp
 
-## Installing and Using PLINK 1.9
+## Installing PLINK 1.9
 PLINK 1.9 is a powerful and efficient tool for whole-genome association studies. This guide provides step-by-step instructions for downloading and installing PLINK 1.9 on a Linux system.
 
 ---
@@ -43,6 +43,19 @@ The final merged dataset is saved as:
 ## GWAS Pipeline Script (TODO)
 
 This script automates the key steps of a Genome-Wide Association Study (GWAS) pipeline, from genotype data quality control to GWAS analysis and visualization. It leverages PLINK for data processing and R for generating plots.
+Create Phenotype File as create Phenotype.txt
+```bash
+plink --bfile temp_file/merged_data_qc_filtered --pheno phenotype.txt --assoc --out gwas_results
+```
+
+Set up covariates (Optional) as covariates.txt
+```bash
+# for Binary Traits
+plink --bfile temp_file/merged_data_qc_filtered --pheno phenotype.txt --covar covariates.txt --logistic --out gwas_results
+# for Continuous Traits
+plink --bfile temp_file/merged_data_qc_filtered --pheno phenotype.txt --covar covariates.txt --linear --out gwas_results
+```
+
 ### Key Features
 1. **Quality Control**:
    - Filters genotype data based on missingness (`GENO`), minor allele frequency (`MAF`), and Hardy-Weinberg equilibrium (`HWE`).
