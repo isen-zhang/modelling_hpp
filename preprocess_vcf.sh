@@ -7,7 +7,7 @@ HWE=1e-6
 
 # Define directories
 input_dir="~/studies/human_genetics_bulk/reads/vcf"
-temp_dir="../results/temp_file"
+temp_dir="results/temp_file"
 mkdir -p "$temp_dir"
 
 # Define the starting file
