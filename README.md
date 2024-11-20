@@ -42,7 +42,7 @@ The final merged dataset is saved as:
 
 ## GWAS Pipeline Script (TODO)
 
-This script automates the key steps of a Genome-Wide Association Study (GWAS) pipeline, from genotype data quality control to GWAS analysis and visualization. It leverages PLINK for data processing and R for generating plots.
+An example scripts can be found in [gwas_v1.sh](https://github.com/isen-zhang/modelling_hpp/blob/main/gwas_v1.sh) automates the key steps of a Genome-Wide Association Study (GWAS) pipeline, from genotype data quality control to GWAS analysis and visualization. It leverages PLINK for data processing and R for generating plots.
 Create Phenotype File as create Phenotype.txt
 ```bash
 plink --bfile temp_file/merged_data_qc_filtered --pheno phenotype.txt --assoc --out gwas_results
