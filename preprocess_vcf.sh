@@ -11,7 +11,7 @@ temp_dir="../results/temp_file"
 mkdir -p "$temp_dir"
 
 # Define the starting file
-start_file="gencove_vcf__5c89d2d0-418f-4177-8ee5-76020455da48.vcf.gz"
+start_file="gencove_vcf__5c89d2d0-418f-4177-8ee5-76020455da48.vcf.gz" # Start processing from the specified start_file
 start_processing=false
 
 # Loop through each .vcf.gz file in the specified directory
